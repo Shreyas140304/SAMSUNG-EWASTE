@@ -18,18 +18,12 @@
         <img src="../../static/images/logo.png" alt="logo" />
       </div>
       <div class="links">
-        <a href="{{ url_for('admin.dashboard') }}">Dashboard</a>
-        <a href="{{ url_for('collection_bp.show_collection_points') }}"
-          >Collection Points</a
-        >
-        <a href="{{ url_for('collection_bp.show_collection_events') }}"
-          >Collection Events</a
-        >
-        <a href="{{ url_for('admin.register_device') }}">Register Device</a>
-        <a href="{{ url_for('sorting_bp.show_sorting_page') }}"
-          >Sorting & Inspection</a
-        >
-        <a href="{{ url_for('refurbishment_bp.show_jobs') }}">Refurbishable</a>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('show_collection_points') }}">Collection Points</a>
+        <a href="{{ url_for('show_collection_events') }}">Collection Events</a>
+        <a href="{{ url_for('register_device') }}">Register Device</a>
+        <a href="{{ url_for('show_sorting_page') }}">Sorting & Inspection</a>
+        <a href="{{ url_for('show_jobs') }}">Refurbishable</a>
       </div>
     </div>
 
