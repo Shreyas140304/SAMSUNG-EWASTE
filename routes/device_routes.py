@@ -23,7 +23,7 @@ def register_device():
 
         return redirect(url_for('device_bp.success'))
 
-    return render_template('register_device.html', form=form)
+    return render_template('register.html', form=form)
 
 @device_bp.route('/success')
 def success():
