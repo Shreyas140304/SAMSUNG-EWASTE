@@ -1,0 +1,45 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background: #f5f6fa;
+    color: #111;
+}
+
+
+.main {
+    margin-left: 220px;
+    padding: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin-bottom: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table th {
+    background: #0b3cff;
+    color: #fff;
+}
+
+.status-refurbishable { color: green; font-weight: 600; }
+.status-recyclable { color: orange; font-weight: 600; }
+.status-rejected { color: red; font-weight: 600; }

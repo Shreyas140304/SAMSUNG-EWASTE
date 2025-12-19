@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Samsung E‑Waste Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Correct Flask static CSS path -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+        </div>
+        <nav>
+            <a href="../Pages/Home.html">Home</a>
+            <a href="../Pages/registerEwaste.html">Register Device</a>
+            <a href="#">Track Request</a>
+            <a href="#">Collection Points</a>
+            <a href="{{url_for('admin.login')}}">Admin Login</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div>
+            <h1>Recycle Smart. <br>Protect the Planet.</h1>
+            <p>
+                Samsung’s official e‑waste management program helps you safely recycle, refurbish,
+                or dispose of electronic devices in an eco‑friendly way.
+            </p>
+            <div class="btn-group">
+                <button class="btn primary">Register E‑Waste</button>
+                <button class="btn secondary">Find Collection Point</button>
+            </div>
+        </div>
+
+        <div class="hero-card">
+            <h3>Why E‑Waste Recycling?</h3>
+            <ul>
+                <li>♻ Prevents environmental pollution</li>
+                <li>🔋 Safe disposal of batteries & electronics</li>
+                <li>🌱 Supports sustainable future</li>
+                <li>🔒 Secure data destruction</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="steps">
+        <h2>How It Works</h2>
+        <div class="step-grid">
+            <div class="step">
+                <h4>1. Register Device</h4>
+                <p>Enter your device details and request recycling or refurbishment.</p>
+            </div>
+            <div class="step">
+                <h4>2. Schedule Pickup</h4>
+                <p>Choose doorstep pickup or drop at a nearby collection point.</p>
+            </div>
+            <div class="step">
+                <h4>3. Safe Processing</h4>
+                <p>Devices are recycled following government & Samsung standards.</p>
+            </div>
+            <div class="step">
+                <h4>4. Confirmation</h4>
+                <p>Receive confirmation once recycling is successfully completed.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service">
+                <h4>Device Recycling</h4>
+                <p>Environment‑friendly recycling of mobiles, TVs, laptops & appliances.</p>
+            </div>
+            <div class="service">
+                <h4>Refurbishment</h4>
+                <p>Working devices are refurbished and reused to reduce waste.</p>
+            </div>
+            <div class="service">
+                <h4>Data Destruction</h4>
+                <p>Certified secure data wiping before recycling electronic devices.</p>
+            </div>
+            <div class="service">
+                <h4>Collection Centers</h4>
+                <p>Nationwide authorized Samsung e‑waste collection points.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <h2>Ready to Dispose Responsibly?</h2>
+        <p>Join Samsung’s initiative and contribute to a cleaner, greener India.</p>
+        <button class="btn primary">Get Started</button>
+    </section>
+
+    <footer>
+        <div>
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+            <p>Official platform for responsible electronic waste management.</p>
+        </div>
+        <div>
+            <h4>Quick Links</h4>
+            <p><a href="#">Register Device</a></p>
+            <p><a href="#">Track Status</a></p>
+            <p><a href="#">Admin Panel</a></p>
+        </div>
+        <div>
+            <h4>Support</h4>
+            <p>Email: ewaste@samsung.com</p>
+            <p>Helpline: 1800‑XXX‑XXXX</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

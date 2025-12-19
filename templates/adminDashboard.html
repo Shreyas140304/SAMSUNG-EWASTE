@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>E-Waste Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../static/css/adminDashboard.css">
+  <link rel="stylesheet" href="../../static/css/sidebar.css">
+
+</head>
+
+<body>
+
+  <div class="sidebar">
+    <div class="logo">
+      <img src="../assets/logo.png" alt="logo">
+    </div>
+    <div class="links">
+      <a href="#">Dashboard</a>
+            <a href="{{url_for('collection_bp.show_collection_points')}}">Collection Points</a>
+            <a href="{{url_for('collection_bp.show_collection_events')}}">Collection Events</a>
+            <a href="{{url_for('device_bp.register_device')}}">Register Device</a>
+            <a href="{{url_for('sorting_bp.show_sorting_page')}}">Sorting & Inspection</a>
+            <a href="{{url_for('refurbishment_bp.show_jobs')}}">Refurbishable</a>
+            <a href="#">Recyclable</a>
+            <a href="#">Rejected</a>
+    </div>
+
+  </div>
+
+  <div class="main">
+    <div class="card" id="registration">
+      <h3>Device Registration</h3>
+      <!-- Add registration form here -->
+    </div>
+
+    <div class="card" id="sorting">
+      <h3>Sorting & Inspection</h3>
+      <!-- Your Sorting & Inspection Form (like your image) -->
+    </div>
+
+    <div class="card" id="refurbishable">
+      <h3>Refurbishable Devices</h3>
+      <table>
+        <tr>
+          <th>Device ID</th>
+          <th>Serial</th>
+          <th>Condition</th>
+        </tr>
+        <!-- PHP / JS loop to fetch from database -->
+      </table>
+    </div>
+
+    <div class="card" id="recyclable">
+      <h3>Recyclable Devices</h3>
+      <table>
+        <tr>
+          <th>Device ID</th>
+          <th>Serial</th>
+          <th>Condition</th>
+        </tr>
+        <!-- PHP / JS loop to fetch from database -->
+      </table>
+    </div>
+
+    <div class="card" id="rejected">
+      <h3>Rejected Devices</h3>
+      <table>
+        <tr>
+          <th>Device ID</th>
+          <th>Serial</th>
+          <th>Condition</th>
+        </tr>
+        <!-- PHP / JS loop to fetch from database -->
+      </table>
+    </div>
+  </div>
+
+</body>
+
+</html>

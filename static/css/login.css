@@ -1,0 +1,153 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f4f6f9;
+    color: #333;
+}
+
+/* ===== Fixed Header / Navbar ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+    background-color: #1428a0;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Login Container ===== */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 100px;
+    /* give space for fixed header */
+}
+
+/* ===== Login Box ===== */
+.login-box {
+    background: #fff;
+    padding: 40px 50px;
+    /* more padding for wider look */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 420px;
+    /* wider form */
+    max-width: 90%;
+}
+
+.login-box h2 {
+    margin-bottom: 30px;
+    color: #1428a0;
+    text-align: center;
+}
+
+/* ===== Form Fields ===== */
+form {
+    display: grid;
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1428a0;
+}
+
+/* ===== Button ===== */
+button {
+    background-color: #1428a0;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0f1f7a;
+}
+
+.full-width {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== Note ===== */
+.forgot-password {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    
+
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #555;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #1428a0;
+}
+.display{
+    display:None;
+}

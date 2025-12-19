@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Login | Samsung E-Waste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Use url_for for static assets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/login.css') }}"
+    />
+  </head>
+
+  <body>
+    <div class="login-container">
+      <header>Samsung E-Waste Management</header>
+
+      <div class="login-box">
+        <h2>Admin Login</h2>
+
+        <!-- Flask form submission -->
+        <form method="POST" action="{{ url_for('admin.login') }}">
+          <input
+            type="hidden"
+            class="display"
+            name="csrf_token"
+            value="{{ csrf_token() }}"
+          />
+          <div>
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Enter Username"
+              required
+            />
+          </div>
+
+          <div>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Enter Password"
+              required
+            />
+          </div>
+
+          <div class="full-width">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+
+        <p class="forgot-password">
+          <a href="#" id="forgotPasswordLink">Forgot password?</a>
+        </p>
+      </div>
+
+      <!-- Forgot Password Modal -->
+      <div id="forgotPasswordModal" class="modal" style="display: none">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Reset Password</h2>
+          <form method="POST" action="{{ url_for('admin.reset_password') }}">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+            <div>
+              <label for="resetUsername">Username</label>
+              <input
+                type="text"
+                name="resetUsername"
+                id="resetUsername"
+                placeholder="Enter Username"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="newPassword">New Password</label>
+              <input
+                type="password"
+                name="newPassword"
+                id="newPassword"
+                placeholder="Enter New Password"
+                required
+              />
+            </div>
+
+            <div>
+              <label for="confirmPassword">Confirm Password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                required
+              />
+            </div>
+
+            <div class="full-width">
+              <button type="submit">Update Password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/adminLogin.js') }}"></script>
+  </body>
+</html>

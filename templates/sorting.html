@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Device Sorting | Samsung E-Waste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../static/css/sidebar.css" />
+    <link rel="stylesheet" href="../../static/css/sorting.css" />
+  </head>
+
+  <body>
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="logo">
+        <img src="../../static/images/logo.png" alt="logo" />
+      </div>
+      <div class="links">
+        <a href="{{ url_for('admin.dashboard') }}">Dashboard</a>
+        <a href="{{ url_for('collection_bp.show_collection_points') }}"
+          >Collection Points</a
+        >
+        <a href="{{ url_for('collection_bp.show_collection_events') }}"
+          >Collection Events</a
+        >
+        <a href="{{ url_for('admin.register_device') }}">Register Device</a>
+        <a href="{{ url_for('sorting_bp.show_sorting_page') }}"
+          >Sorting & Inspection</a
+        >
+        <a href="{{ url_for('refurbishment_bp.show_jobs') }}">Refurbishable</a>
+        <!-- <a href="{{ url_for('lifecycle_bp.log_recovery') }}">Recyclable</a> -->
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="content-wrapper">
+        <div class="container">
+          <h2>Registered Devices</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Device ID</th>
+                <th>Serial Number</th>
+                <th>Type</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for device in devices %}
+              <tr>
+                <td>{{ device.DeviceID }}</td>
+                <td>{{ device.SerialNumber }}</td>
+                <td>{{ device.DeviceType }}</td>
+                <td>{{ device.Brand }}</td>
+                <td>{{ device.Model }}</td>
+                <td>
+                  <button
+                    class="edit-btn"
+                    data-device-id="{{ device.DeviceID }}"
+                    data-serial="{{ device.SerialNumber }}"
+                  >
+                    Edit Sorting
+                  </button>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+        <!-- POPUP MODAL -->
+        <div id="sortingModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Sorting & Inspection Form</h3>
+            <form
+              method="POST"
+              action="{{ url_for('sorting_bp.save_sorting') }}"
+              class="modal-form"
+            >
+              <!-- CSRF -->
+              <input
+                type="hidden"
+                name="csrf_token"
+                value="{{ csrf_token() }}"
+              />
+
+              <!-- Device ID (FK) -->
+              <input type="hidden" name="device_id" id="modalDeviceID" />
+
+              <!-- Sorting Date -->
+              <div>
+                <label>Sorting Date</label>
+                <input type="date" name="sorting_date" required />
+              </div>
+
+              <!-- Serial Number (display only, not stored here) -->
+              <div>
+                <label>Serial Number</label>
+                <input type="text" id="modalSerialNumber" readonly />
+              </div>
+
+              <!-- Sorted By -->
+              <div>
+                <label>Sorted By </label>
+                <input
+                  type="text"
+                  name="sorted_by"
+                  placeholder="Enter Staff Name"
+                  required
+                />
+              </div>
+
+              <!-- Category -->
+              <div>
+                <label>Sorting Category</label>
+                <select name="category" required>
+                  <option value="" disabled selected>Select Category</option>
+                  <option value="Reusable">Reusable</option>
+                  <option value="Refurbish">Refurbish</option>
+                  <option value="Dismantle">Dismantle</option>
+                  <option value="Dispose">Dispose</option>
+                </select>
+              </div>
+
+              <!-- Remarks -->
+              <div>
+                <label>Remarks</label>
+                <textarea
+                  name="remarks"
+                  rows="3"
+                  placeholder="Inspection notes or issues"
+                ></textarea>
+              </div>
+
+              <!-- Button -->
+              <div class="full-width">
+                <button type="submit">Save Sorting</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../../static/js/sorting.js"></script>
+  </body>
+</html>
